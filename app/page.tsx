@@ -7,33 +7,29 @@ import MultipleItemCarousel from "@/components/website/multiple-item-carousel";
 import OurServices from "@/components/website/our-services";
 import Footer from "@/components/website/footer";
 import Testimonials from "@/components/website/testimonials";
+import Newsletter from "@/components/website/newsletter";
+import ProductTabs from "@/components/website/product-tabs";
 
 export default function Home() {
   return (
-    <main className=" overflow-x-hidden">
-      <Button variant="outline">Button</Button>
-      <div className="">
-        <HeroCarousel />
-      </div>
+    <main className=" space-y-10">
+      <HeroCarousel />
+      <OurServices />
 
-      <div className=" grid grid-cols-5 gap-5">
-        <SingleProductCard />
-        <SingleProductCard />
-        <SingleProductCard />
-        <SingleProductCard />
-        <SingleProductCard />
-        <SingleProductCard />
-      </div>
+      <>
+        <ProductTabs />
+        <div className=" grid grid-cols-4 gap-5">
+          {Array.from({ length: 20 }).map((_, index) => (
+            <SingleProductCard key={index} />
+          ))}
+        </div>
+      </>
 
-      <div className="p-20">
-        <MultipleItemCarousel />
-      </div>
+      <MultipleItemCarousel title={"Newly Arrived"} />
 
-      <div className=" w-8/12 mx-auto">
-        <OurServices />
-      </div>
+      <Testimonials />
+      <Newsletter />
 
-<Testimonials/>
       <Footer />
     </main>
   );
