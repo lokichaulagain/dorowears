@@ -12,7 +12,7 @@ export default function ProductTabs() {
           key={index}
           onClick={() => setCurrentCategory(item.value)}
           variant="outline"
-          className={`${item.value === currentCategory ? "bg-orange-200 text-teal-600" : "bg-gray-200"}  hover:bg-orange-200 hover:text-teal-600 px-8 py-5 text-neutral-700`}>
+          className={`${item.value === currentCategory ? "bg-orange-200 text-primary-300" : "bg-gray-200"}  hover:bg-orange-200 hover:text-primary-300 px-8 py-5 text-neutral-700`}>
           {item.name}
         </Button>
       ))}

@@ -9,13 +9,13 @@ export default function Page() {
     <div className="">
       <div className=" grid grid-cols-4 gap-5">
         <div className=" border border-neutral-300 rounded-lg p-2">
-          <p className=" text-xl text-teal-600 font-semibold tracking-wider uppercase">Category</p>
+          <p className=" text-xl text-primary-300 font-semibold tracking-wider uppercase">Category</p>
           <Separator />
 
           <ScrollArea className=" h-96 ">
             {Array.from({ length: 10 }).map((_, index) => (
               <p
-                className=" mt-2 text-sm tracking-wider font-medium text-neutral-700 cursor-pointer hover:text-teal-600 hover:translate-x-1 duration-300   "
+                className=" mt-2 text-sm tracking-wider font-medium text-neutral-700 cursor-pointer hover:text-primary-300 hover:translate-x-1 duration-300   "
                 key={index}>
                 Category Name
               </p>

@@ -14,7 +14,7 @@ export default function SingleProductCard() {
   };
 
   return (
-    <div className="border border-neutral-300 rounded-xl p-2 text-neutral-700 space-y-1 cursor-pointer  ">
+    <div className="border border-primary-100 rounded-xl p-2 text-neutral-700 space-y-1 cursor-pointer  ">
       <Image
         src={isHovered ? shirt2 : shirt1}
         alt="img"
@@ -36,21 +36,21 @@ export default function SingleProductCard() {
           <RadioGroupItem
             value="default"
             id="r1"
-            className="bg-red-500 p-2.5 border-2  border-neutral-200 focus:border-teal-600 "
+            className="bg-red-500 p-2.5 border-2  border-neutral-200 focus:border-primary-300 "
           />
         </div>
         <div className="flex items-center space-x-2">
           <RadioGroupItem
             value="comfortable"
             id="r2"
-            className="bg-black p-2.5 border-2  border-neutral-200 focus:border-teal-600 "
+            className="bg-black p-2.5 border-2  border-neutral-200 focus:border-primary-300 "
           />
         </div>
         <div className="flex items-center space-x-2">
           <RadioGroupItem
             value="compact"
             id="r3"
-            className="bg-yellow-500 p-2.5 border-2  border-neutral-200 focus:border-teal-600 "
+            className="bg-yellow-500 p-2.5 border-2  border-neutral-200 focus:border-primary-300 "
           />
         </div>
       </RadioGroup>
@@ -58,15 +58,15 @@ export default function SingleProductCard() {
       <p>Colorful Pattern Shirts</p>
       <div className="flex items-center justify-between">
         <p>
-          <span className="font-medium text-lg text-teal-600">$238.85</span> <span className="line-through text-sm">$245.8</span>
+          <span className="font-medium text-lg text-primary-300">$238.85</span> <span className="line-through text-sm">$245.8</span>
         </p>
 
         <div className="flex space-x-2">
-          <div className="rounded-full border border-neutral-300 bg-teal-50 p-2 text-teal-600 cursor-pointer hover:bg-teal-600 hover:text-neutral-50 hover:-translate-y-1 duration-300">
+          <div className="rounded-full border border-neutral-300 bg-primary-50 p-2 text-primary-300 cursor-pointer hover:bg-primary-300 hover:text-neutral-50 hover:-translate-y-1 duration-300">
             <ShoppingCart size={18} />
           </div>
 
-          <div className="rounded-full border border-neutral-300 bg-teal-50 p-2 text-teal-600 cursor-pointer hover:bg-teal-600 hover:text-neutral-50 hover:-translate-y-1 duration-300">
+          <div className="rounded-full border border-neutral-300 bg-primary-50 p-2 text-primary-300 cursor-pointer hover:bg-primary-300 hover:text-neutral-50 hover:-translate-y-1 duration-300">
             <EyeIcon size={18} />
           </div>
         </div>

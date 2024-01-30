@@ -1,29 +1,28 @@
 "use client";
-import { useState } from "react";
-import { Rating } from "@smastrom/react-rating";
-
 import "@smastrom/react-rating/style.css";
-import { Separator } from "@/components/ui/separator";
+import shirt from "../../../public/products/shirt2.jpg";
+import Image from "next/image";
+import SingleProductRightSection from "@/components/website/single-product-right-section";
+import SingleProductInfoTabs from "@/components/website/single-product-info-tabs";
+import MultipleItemCarousel from "@/components/website/multiple-item-carousel";
 
 export default function Page() {
   return (
-    <div>
-      <div className=" w-6/12"></div>
-
-      <div className=" w-6/12">
-        <p>Colorful Pattern Shirts HD450</p>
-        <div>
-          Brands: Bootstrap
-          <Rating
-            style={{ maxWidth: 100 }}
-            readOnly
-            value={3}
+    <>
+      <div className=" grid grid-cols-2 gap-8">
+        <div className="">
+          <Image
+            src={shirt}
+            alt="img"
           />
         </div>
-        <Separator/>
-        <p> <span className=" text-3xl text-teal-600 font-medium">$120.00</span> <span >$200.00 </span> </p>
-        <Separator/>
+        <SingleProductRightSection />
       </div>
-    </div>
+      <SingleProductInfoTabs />
+
+      <MultipleItemCarousel title={"Similar Products"} />
+
+
+    </>
   );
 }

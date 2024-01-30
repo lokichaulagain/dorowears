@@ -11,7 +11,7 @@ export default function HeroCarousel() {
         {Array.from({ length: 5 }).map((_, index) => (
           <CarouselItem key={index}>
             <div className="p-1">
-              <div className=" bg-teal-100">
+              <div className=" bg-primary-100">
                 <Image
                   src={banner}
                   alt="img"

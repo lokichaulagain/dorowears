@@ -20,7 +20,7 @@ export default function OurServices() {
           // width={200}
           // height={200}
         />
-        <p className={`text-base tracking-wide  font-semibold text-teal-600 text-center rounded-sm  ${item.className}`}>{item.name}</p>
+        <p className={`text-base tracking-wide  font-semibold text-primary-300 text-center rounded-sm  ${item.className}`}>{item.name}</p>
       </div>
       )) }
     </div>
