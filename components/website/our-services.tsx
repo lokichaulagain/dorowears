@@ -13,14 +13,11 @@ export default function OurServices() {
       {services.map((item: any, index: any) => (
         <div
           key={index}
-          className="border border-neutral-300 rounded-xl p-2 text-neutral-700 space-y-1 cursor-pointer hover:-translate-y-1 duration-300  ">
+          className="border border-neutral-300  rounded-sm p-2 text-neutral-700 space-y-1 cursor-pointer hover:-translate-y-1 duration-300  ">
           <Image
             src={item.image}
             alt="img"
-            className=" rounded-xl mx-auto mb-2"
-            //   layout="responsive"
-            // width={200}
-            // height={200}
+            className="mx-auto mb-2"
           />
           <p className={`text-base tracking-wide  font-semibold text-primary-300 text-center rounded-sm  ${item.className}`}>{item.name}</p>
         </div>
