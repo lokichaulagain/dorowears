@@ -7,12 +7,12 @@ import React from "react";
 export default function Page() {
   return (
     <div className="">
-      <div className=" grid grid-cols-4 gap-5">
+      <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         <div className=" border border-neutral-300 rounded-lg p-2">
           <p className=" text-xl text-primary-300 font-semibold tracking-wider uppercase">Category</p>
           <Separator />
 
-          <ScrollArea className=" h-96 ">
+          <ScrollArea className=" h-96  ">
             {Array.from({ length: 10 }).map((_, index) => (
               <p
                 className=" mt-2 text-sm tracking-wider font-medium text-neutral-700 cursor-pointer hover:text-primary-300 hover:translate-x-1 duration-300   "

@@ -9,7 +9,7 @@ import MultipleItemCarousel from "@/components/website/multiple-item-carousel";
 export default function Page() {
   return (
     <>
-      <div className=" grid grid-cols-2 gap-8">
+      <div className=" grid grid-cols-1  lg:grid-cols-2 gap-8">
         <div className="">
           <Image
             src={shirt}
@@ -18,9 +18,13 @@ export default function Page() {
         </div>
         <SingleProductRightSection />
       </div>
-      <SingleProductInfoTabs />
+    <div className=" mt-12">
+    <SingleProductInfoTabs />
+    </div>
 
-      <MultipleItemCarousel title={"Similar Products"} />
+     <div className=" mt-12">
+     <MultipleItemCarousel title={"Similar Products"} />
+     </div>
 
 
     </>

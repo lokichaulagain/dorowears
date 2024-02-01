@@ -30,7 +30,7 @@ export default function SingleProductRightSection() {
         <p className=" text-3xl text-primary-300 font-medium">$120.00</p> <span>$200.00 </span>
       </div>
       <Separator />
-      <p className=" tracking-wider  leading-relaxed text-neutral-700"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero sunt eius earum excepturi nemo qui, illo ipsam voluptatem corrupti quibusdam temporibus optio similique consequatur voluptate cupiditate suscipit, ducimus minima perspiciatis, sed dolorum. Vel sit illum numquam asperiores quis facilis pariatur ipsa! Asperiores sapiente iure cumque doloremque, ad quam est cupiditate!</p>
+      <p className=" tracking-wider  leading-relaxed text-neutral-700"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero sunt eius earum excepturi nemo qui,  asperiores quis  quam est cupiditate!</p>
       <div className=" text-sm tracking-wider  text-neutral-700 space-y-4">
         <p className=" flex gap-1">
           <ShieldCheck size={18} />

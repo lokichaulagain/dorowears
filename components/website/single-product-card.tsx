@@ -5,6 +5,7 @@ import shirt1 from "../../public/products/shirt1.jpg";
 import shirt2 from "../../public/products/shirt2.jpg";
 import { EyeIcon, ShoppingCart } from "lucide-react";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import Link from "next/link";
 
 export default function SingleProductCard() {
   const [isHovered, setIsHovered] = useState(false);
@@ -62,13 +63,13 @@ export default function SingleProductCard() {
         </p>
 
         <div className="flex space-x-2">
-          <div className="rounded-full border border-neutral-300 bg-primary-50 p-2 text-primary-300 cursor-pointer hover:bg-primary-300 hover:text-neutral-50 hover:-translate-y-1 duration-300">
+          <Link href={"/cart"} className="rounded-full border border-neutral-300 bg-primary-50 p-2 text-primary-300 cursor-pointer hover:bg-primary-300 hover:text-neutral-50 hover:-translate-y-1 duration-300">
             <ShoppingCart size={18} />
-          </div>
+          </Link>
 
-          <div className="rounded-full border border-neutral-300 bg-primary-50 p-2 text-primary-300 cursor-pointer hover:bg-primary-300 hover:text-neutral-50 hover:-translate-y-1 duration-300">
+          <Link href={"/product/single-product-detail-page"} className="rounded-full border border-neutral-300 bg-primary-50 p-2 text-primary-300 cursor-pointer hover:bg-primary-300 hover:text-neutral-50 hover:-translate-y-1 duration-300">
             <EyeIcon size={18} />
-          </div>
+          </Link>
         </div>
       </div>
     </div>

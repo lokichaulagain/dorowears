@@ -2,11 +2,11 @@
 
 export default function Newsletter() {
   return (
-    <div className="relative overflow-hidden   py-14 rounded-2xl bg-primary-300 ">
+    <div className="relative overflow-hidden px-2   py-14 rounded-2xl bg-primary-300 ">
       <div className="relative z-10 max-w-xl mx-auto sm:text-center">
         <div className="space-y-3">
-          <h3 className="text-3xl text-white font-bold">Subscribe to our newsletter</h3>
-          <p className="text-primary-100 leading-relaxed">Stay up to date with the roadmap progress, announcements and exclusive discounts feel free to sign up with your email.</p>
+          <h3 className=" text-lg md:text-3xl text-white font-bold text-center">Subscribe to our newsletter</h3>
+          <p className="text-sm md:text-base text-primary-100 leading-relaxed">Stay up to date with the roadmap progress, announcements and exclusive discounts feel free to sign up with your email.</p>
         </div>
         <div className="mt-6">
           <form
@@ -19,7 +19,7 @@ export default function Newsletter() {
             />
             <button className="p-2 px-3 rounded-lg font-medium text-white bg-primary-300 hover:bg-primary-400 active:bg-primary-700 duration-150 outline-none shadow-md focus:shadow-none sm:px-4">Subscribe</button>
           </form>
-          <p className="mt-3 max-w-lg text-[15px] text-primary-100 sm:mx-auto">
+          <p className="mt-3 max-w-lg text-sm md:text-base text-primary-50">
             No spam ever, we are care about the protection of your data. Read our{" "}
             <a
               className="underline"

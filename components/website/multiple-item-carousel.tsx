@@ -13,7 +13,7 @@ export default function MultipleItemCarousel({ title }: any) {
       <Carousel
         opts={{ align: "start", loop: false }}
         className="w-full">
-        <CarouselContent>
+        <CarouselContent className="">
           {Array.from({ length: 10 }).map((_, index) => (
             <CarouselItem
               key={index}

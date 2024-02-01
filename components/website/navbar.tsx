@@ -44,7 +44,7 @@ export default function Navbar() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem>
+        {/* <NavigationMenuItem>
           <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -76,9 +76,9 @@ export default function Navbar() {
               </ListItem>
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
 
-        <NavigationMenuItem>
+        {/* <NavigationMenuItem>
           <NavigationMenuTrigger>Components</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
@@ -92,7 +92,7 @@ export default function Navbar() {
               ))}
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
 
         {navlinks.map((item: any, index: any) => (
           <NavigationMenuItem key={index}>
@@ -110,6 +110,12 @@ export default function Navbar() {
 }
 
 const navlinks = [
+
+  {
+    name: "Home",
+    href: "/",
+  },
+
   {
     name: "Shop",
     href: "/shop",
@@ -118,6 +124,22 @@ const navlinks = [
   {
     name: "Cart",
     href: "/cart",
+  },
+
+  {
+    name: "Login",
+    href: "/login",
+  },
+
+
+  {
+    name: "Register",
+    href: "/register",
+  },
+
+  {
+    name: "My Profile",
+    href: "/profile",
   },
 ];
 

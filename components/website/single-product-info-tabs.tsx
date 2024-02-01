@@ -5,12 +5,12 @@ export default function SingleProductInfoTabs() {
   const [currentTab, setCurrentTab] = useState(headers[0]);
 
   return (
-    <div className=" ">
-      <div className=" flex space-x-20 text-neutral-700">
+    <div className="text-neutral-700 ">
+      <div className=" flex space-x-5 md:space-x-20  mb-4">
         {headers.map((item: string, index: any) => (
           <p
             onClick={() => setCurrentTab(item)}
-            className={`${item === currentTab ? "text-primary-500 underline" : ""} hover:text-primary-500 duration-200  cursor-pointer uppercase tracking-wider font-medium text-lg`}
+            className={`${item === currentTab ? "text-primary-500 underline" : ""} hover:text-primary-500 duration-200  cursor-pointer uppercase tracking-wider font-medium text-sm md:text-lg`}
             key={index}>
             {item}
           </p>
