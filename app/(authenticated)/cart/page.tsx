@@ -1,10 +1,10 @@
 "use client";
 import { Delete, DeleteIcon, Home, Trash2 } from "lucide-react";
 import React, { useState } from "react";
-import shirt from "../../public/products/shirt1.jpg";
+import shirt from "../../../public/products/shirt1.jpg";
 import Image from "next/image";
 
-export default function HeroSection() {
+export default function Page() {
   const [InputData, setInputData] = useState({
     val1: "",
     val2: "",

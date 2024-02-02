@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import CarouselItemCarousel from "@/components/website/category-item-carousel";
 import ProductTabs from "@/components/website/product-tabs";
 import SingleProductCard from "@/components/website/single-product-card";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -29,11 +30,18 @@ export default function Home() {
             We are an Apple <br />
             Authorised Service Provider
           </p>
-          <Button className=" bg-primary-300 hover:bg-primary-300">Shop Now</Button>
+          <div>
+            <Link href={"shop"}>
+              <Button className=" bg-primary-300 hover:bg-primary-300">Shop Now</Button>
+            </Link>
+          </div>
         </div>
       </div>
 
-      <MultipleItemCarousel title={"Newly Arrived"} />
+      <MultipleItemCarousel
+        title1={"Newly"}
+        title2={"Arrived"}
+      />
 
       <div className="banner2  w-full p-12  tracking-wider text-neutral-700">
         <div className=" space-y-3 hidden md:block">
@@ -42,7 +50,11 @@ export default function Home() {
             We are an Apple <br />
             Authorised Service Provider
           </p>
-          <Button className=" bg-primary-300 hover:bg-primary-300">Shop Now</Button>
+          <div>
+            <Link href={"shop"}>
+              <Button className=" bg-primary-300 hover:bg-primary-300">Shop Now</Button>
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -59,7 +71,11 @@ export default function Home() {
               We are an Apple <br />
               Authorised Service
             </p>
-            <Button className=" text-sm bg-primary-300 hover:bg-primary-300">Shop Now</Button>
+            <div>
+            <Link href={"shop"}>
+              <Button className=" bg-primary-300 hover:bg-primary-300">Shop Now</Button>
+            </Link>
+          </div>
           </div>
         </div>
 
@@ -70,7 +86,11 @@ export default function Home() {
               We are an Apple <br />
               Authorised Service
             </p>
-            <Button className="text-sm bg-primary-300 hover:bg-primary-300">Shop Now</Button>
+            <div>
+            <Link href={"shop"}>
+              <Button className=" bg-primary-300 hover:bg-primary-300">Shop Now</Button>
+            </Link>
+          </div>
           </div>
         </div>
       </div>
@@ -85,7 +105,11 @@ export default function Home() {
               We are an Apple <br />
               Authorised Service
             </p>
-            <Button className=" text-sm bg-primary-300 hover:bg-primary-300">Shop Now</Button>
+            <div>
+            <Link href={"shop"}>
+              <Button className=" bg-primary-300 hover:bg-primary-300">Shop Now</Button>
+            </Link>
+          </div>
           </div>
         </div>
 
@@ -96,7 +120,11 @@ export default function Home() {
               We are an Apple <br />
               Authorised Service
             </p>
-            <Button className="text-sm bg-primary-300 hover:bg-primary-300">Shop Now</Button>
+            <div>
+            <Link href={"shop"}>
+              <Button className=" bg-primary-300 hover:bg-primary-300">Shop Now</Button>
+            </Link>
+          </div>
           </div>
         </div>
       </div>

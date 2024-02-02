@@ -3,10 +3,14 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import SingleProductCard from "./single-product-card";
 import { Separator } from "../ui/separator";
 
-export default function MultipleItemCarousel({ title }: any) {
+export default function MultipleItemCarousel({ title1, title2 }: any) {
   return (
     <div>
-      <p className=" text-xl font-semibold  tracking-wider uppercase  text-primary-300">{title}</p>
+      <p className=" text-xl font-semibold  tracking-wider uppercase  text-primary-300">
+        {" "}
+        {title1} {""}
+        <span className=" text-neutral-700">{title2}</span>{" "}
+      </p>
       <div className=" flex mb-4 mt-1">
         <Separator />
       </div>

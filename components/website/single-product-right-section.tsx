@@ -62,7 +62,7 @@ export default function SingleProductRightSection() {
           <div
             key={index}
             onClick={() => setSelectedSize(item.name)}
-            className={`${item.name === selectedSize ? "border  bg-primary-500 rounded-sm  " : " border rounded-sm "} p-1 min-w-12  cursor-pointer  flex items-center justify-center `}>
+            className={`${item.name === selectedSize ? "border  bg-primary-350 rounded-sm  " : " border rounded-sm "} p-1 min-w-12  cursor-pointer  flex items-center justify-center `}>
             <p className={`${item.className} ${item.name === selectedSize && "text-white"}    rounded-sm uppercase font-medium text-neutral-700 `}>{item.name}</p>
           </div>
         ))}
@@ -85,7 +85,7 @@ export default function SingleProductRightSection() {
         </div>
         <Button
           variant="outline"
-          className=" bg-primary-500 text-white hover:bg-primary-300 hover:text-white py-5">
+          className=" bg-primary-350 text-white hover:bg-primary-300 hover:text-white py-5">
           Add to cart
         </Button>
       </div>

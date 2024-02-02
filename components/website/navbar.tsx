@@ -6,6 +6,10 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
+import logo from "../../public/logo.png";
+import Image from "next/image";
+import { CircleUserRound, ShoppingCart } from "lucide-react";
+import TopNavbar from "./top-navbar";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -42,52 +46,72 @@ const components: { title: string; href: string; description: string }[] = [
 
 export default function Navbar() {
   return (
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className=" bg-primary-350">Men Category</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <div className=" w-[50vw] grid grid-cols-4 p-4 ">
-            <p className=" text-lg font-medium text-primary-350 underline">Men Category</p>
-              {Array.from({ length: 20 }).map((_, index) => (
-                <p
-                  key={index}
-                  className=" cursor-pointer mb-3 hover:text-primary-400  tracking-wide text-neutral-700  hover:translate-x-1 duration-300">
-                  Genuine Leather
-                </p>
-              ))}
-            </div>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+    <div>
+      <div className=" flex items-center justify-between ">
+        <Link href={"/"}>
+          <Image
+            src={logo}
+            alt="img"
+            className=" w-16"
+          />
+        </Link>
+        <NavigationMenu className=" ">
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className=" bg-primary-350 hover:bg-primary-350 text-primary-50  hover:text-neutral-700 ">Men Category</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <div className=" w-[50vw] grid grid-cols-4 p-4 ">
+                  <p className=" text-lg font-medium text-primary-350 underline ">Men Category</p>
+                  {Array.from({ length: 20 }).map((_, index) => (
+                    <p
+                      key={index}
+                      className=" cursor-pointer mb-3 hover:text-primary-400  tracking-wide text-neutral-700  hover:translate-x-1 duration-300">
+                      Genuine Leather
+                    </p>
+                  ))}
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
 
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Women Category</NavigationMenuTrigger>
-          <NavigationMenuContent>
-          <div className=" w-[50vw] grid grid-cols-4 p-4 ">
-            <p className=" text-lg font-medium text-primary-350 underline">Women Category</p>
-              {Array.from({ length: 20 }).map((_, index) => (
-                <p
-                  key={index}
-                  className=" cursor-pointer mb-3 hover:text-primary-400  tracking-wide text-neutral-700  hover:translate-x-1 duration-300">
-                  Weeding Dresses
-                </p>
-              ))}
-            </div>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className="bg-primary-350 hover:bg-primary-350 text-primary-50  hover:text-neutral-700">Women Category</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <div className=" w-[50vw] grid grid-cols-4 p-4 ">
+                  <p className=" text-lg font-medium text-primary-350 underline ">Women Category</p>
+                  {Array.from({ length: 20 }).map((_, index) => (
+                    <p
+                      key={index}
+                      className=" cursor-pointer mb-3 hover:text-primary-400  tracking-wide text-neutral-700  hover:translate-x-1 duration-300">
+                      Weeding Dresses
+                    </p>
+                  ))}
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
 
-        {navlinks.map((item: any, index: any) => (
-          <NavigationMenuItem key={index}>
-            <Link
-              href={item.href}
-              legacyBehavior
-              passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>{item.name}</NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-        ))}
-      </NavigationMenuList>
-    </NavigationMenu>
+            {navlinks.map((item: any, index: any) => (
+              <NavigationMenuItem key={index}>
+                <Link
+                  href={item.href}
+                  legacyBehavior
+                  passHref>
+                  <NavigationMenuLink className={`${navigationMenuTriggerStyle()} bg-primary-350 hover:bg-primary-350 text-primary-50 hover:text-neutral-700`}>{item.name}</NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+
+        <div className=" flex items-center gap-2 text-primary-50">
+          <Link href={"/cart"}>
+            <ShoppingCart />
+          </Link>
+          <Link href={"/profile"}>
+            <CircleUserRound />
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -120,6 +144,16 @@ const navlinks = [
   {
     name: "My Profile",
     href: "/profile",
+  },
+
+  {
+    name: "Contact",
+    href: "/contact",
+  },
+
+  {
+    name: "Terms",
+    href: "/terms-conditions",
   },
 ];
 
