@@ -1,3 +1,4 @@
+"use client"
 import Footer from "@/components/website/footer";
 import Navbar from "@/components/website/navbar";
 

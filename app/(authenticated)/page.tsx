@@ -1,3 +1,4 @@
+"use client";
 import HeroCarousel from "@/components/website/hero-carousel";
 import MultipleItemCarousel from "@/components/website/multiple-item-carousel";
 import OurServices from "@/components/website/our-services";
@@ -7,18 +8,36 @@ import CarouselItemCarousel from "@/components/website/category-item-carousel";
 import ProductTabs from "@/components/website/product-tabs";
 import SingleProductCard from "@/components/website/single-product-card";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-export default function Home() {
+export default function Page() {
+  const [products, setProducts] = useState<any>();
+  useEffect(() => {
+    const fetch = async () => {
+      try {
+        const res = await axios.get("https://lokibackend.webxnep.com/api/products");
+        setProducts(res?.data?.data?.results);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetch()
+  }, []);
+
+  console.log(products)
+
+
   return (
     <main className=" space-y-10">
       <HeroCarousel />
       <OurServices />
 
       <div>
-        <ProductTabs />
+        {/* <ProductTabs /> */}
         <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-6">
-          {Array.from({ length: 20 }).map((_, index) => (
-            <SingleProductCard key={index} />
+          {products?.map((product:any, index:number) => (
+            <SingleProductCard key={index} product={product} />
           ))}
         </div>
       </div>
@@ -72,10 +91,10 @@ export default function Home() {
               Authorised Service
             </p>
             <div>
-            <Link href={"shop"}>
-              <Button className=" bg-primary-300 hover:bg-primary-300">Shop Now</Button>
-            </Link>
-          </div>
+              <Link href={"shop"}>
+                <Button className=" bg-primary-300 hover:bg-primary-300">Shop Now</Button>
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -87,10 +106,10 @@ export default function Home() {
               Authorised Service
             </p>
             <div>
-            <Link href={"shop"}>
-              <Button className=" bg-primary-300 hover:bg-primary-300">Shop Now</Button>
-            </Link>
-          </div>
+              <Link href={"shop"}>
+                <Button className=" bg-primary-300 hover:bg-primary-300">Shop Now</Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -106,10 +125,10 @@ export default function Home() {
               Authorised Service
             </p>
             <div>
-            <Link href={"shop"}>
-              <Button className=" bg-primary-300 hover:bg-primary-300">Shop Now</Button>
-            </Link>
-          </div>
+              <Link href={"shop"}>
+                <Button className=" bg-primary-300 hover:bg-primary-300">Shop Now</Button>
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -121,10 +140,10 @@ export default function Home() {
               Authorised Service
             </p>
             <div>
-            <Link href={"shop"}>
-              <Button className=" bg-primary-300 hover:bg-primary-300">Shop Now</Button>
-            </Link>
-          </div>
+              <Link href={"shop"}>
+                <Button className=" bg-primary-300 hover:bg-primary-300">Shop Now</Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
