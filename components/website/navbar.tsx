@@ -4,7 +4,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import logo from "../../public/Logo.png";
+import logo from "../../public/Logo.webp";
 import Image from "next/image";
 import { CircleUserRound, ShoppingCart } from "lucide-react";
 import TopNavbar from "./top-navbar";

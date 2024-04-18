@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import shipping from "../../public/services/shipping.png";
 import happy from "../../public/services/happy.png";
