@@ -1,61 +1,44 @@
 "use client";
-
 import * as React from "react";
 import Link from "next/link";
-
 import { cn } from "@/lib/utils";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import logo from "../../public/logo.png";
+import logo from "../../public/Logo.png";
 import Image from "next/image";
 import { CircleUserRound, ShoppingCart } from "lucide-react";
 import TopNavbar from "./top-navbar";
+import { usePathname } from "next/navigation";
+import "react-modern-drawer/dist/index.css";
+import Drawer from "react-modern-drawer";
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description: "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description: "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description: "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description: "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description: "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
-];
+//import styles 👇
+import "react-modern-drawer/dist/index.css";
+import { HammerIcon, MenuIcon } from "lucide-react";
+import { Button } from "../ui/button";
 
 export default function Navbar() {
+  const pathname = usePathname();
+  console.log(pathname);
+
+  const [isOpen, setIsOpen] = React.useState(false);
+  const toggleDrawer = () => {
+    setIsOpen((prevState) => !prevState);
+  };
+
   return (
-    <div>
+    <div className="">
       <div className=" flex items-center justify-between ">
         <Link href={"/"}>
           <Image
             src={logo}
             alt="img"
-            className=" w-16"
+            height={150}
+            width={150}
+            className=" object-cover py-2 "
           />
         </Link>
-        <NavigationMenu className=" ">
+        {/* <NavigationMenu className=" ">
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger className=" bg-primary-350 hover:bg-primary-350 text-primary-50  hover:text-neutral-700 ">Men Category</NavigationMenuTrigger>
@@ -100,16 +83,53 @@ export default function Navbar() {
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>
-        </NavigationMenu>
+        </NavigationMenu> */}
 
-        <div className=" flex items-center gap-2 text-primary-50">
-          <Link href={"/cart"}>
-            <ShoppingCart />
-          </Link>
-          <Link href={"/profile"}>
-            <CircleUserRound />
+        <div className=" hidden md:block">
+          <div className=" flex  items-center gap-8 font-medium">
+            {navlinks.map((item, index: number) => (
+              <Link
+                key={index}
+                href={item.href}
+                className={`${pathname === item.href ? " font-semibold  text-lg " : ""} `}>
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <Link
+            href="tel:970-3976578">
+            <Button className=" bg-green-500 text-white hover:bg-green-600">Whatsapp Now</Button>
           </Link>
         </div>
+        {/* <div className=" flex items-center gap-2 ">
+          <MenuIcon
+            onClick={toggleDrawer}
+            size={26}
+            className=" cursor-pointer block md:hidden "
+          />
+
+          <Drawer
+            open={isOpen}
+            onClose={toggleDrawer}
+            direction="right"
+            className="  bg-secondary-500 z-30 ">
+            <div className=" bg-secondary-500 space-y-4 p-4 border-none flex flex-col h-screen">
+              {navlinks.map((item: any, idx) => {
+                return (
+                  <Link
+                    href={item.href}
+                    key={idx}
+                    className={`${pathname === item.href ? "text-primary-500 underline_hover_effect" : ""} text-accent-400 cursor-pointer hover:text-primary-500 transition-all ease-in-out  underline_hover_effect`}>
+                    {item.name}
+                  </Link>
+                );
+              })}
+            </div>
+          </Drawer>
+        </div> */}
       </div>
     </div>
   );
@@ -127,33 +147,8 @@ const navlinks = [
   },
 
   {
-    name: "Cart",
-    href: "/cart",
-  },
-
-  {
-    name: "Login",
-    href: "/login",
-  },
-
-  {
-    name: "Register",
-    href: "/register",
-  },
-
-  {
-    name: "My Profile",
-    href: "/profile",
-  },
-
-  {
-    name: "Contact",
-    href: "/contact",
-  },
-
-  {
-    name: "Terms",
-    href: "/terms-conditions",
+    name: "Our Stores",
+    href: "/our-stores",
   },
 ];
 

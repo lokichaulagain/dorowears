@@ -1,54 +1,84 @@
 "use client";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import shirt1 from "../../public/products/shirt1.jpg";
 import shirt2 from "../../public/products/shirt2.jpg";
 import { Separator } from "../ui/separator";
+import axios from "axios";
+import Link from "next/link";
+import { AxiosInstance } from "@/app/(repositories)/config";
 
 export default function CarouselItemCarousel({ title1, title2 }: any) {
+  const [categories, setCategories] = useState<any>();
+  useEffect(() => {
+    const fetch = async () => {
+      try {
+        const res = await AxiosInstance.get("/categories");
+        setCategories(res?.data?.data?.results);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetch();
+  }, []);
+
+  console.log(categories);
+
   return (
-    <div>
-      <p className=" text-xl font-semibold  tracking-wider uppercase  text-primary-300">
-        {" "}
-        {title1} {""}
-        <span className=" text-neutral-700">{title2}</span>{" "}
-      </p>
-      <div className=" flex mb-4 mt-1">
-        <Separator />
-      </div>
-      <Carousel
-        opts={{ align: "start", loop: false }}
-        className="w-full">
-        <CarouselContent className="">
-          {Array.from({ length: 10 }).map((_, index) => (
-            <CarouselItem
-              key={index}
-              className="md:basis-1/2 lg:basis-1/4 hover:-translate-y-1 duration-300">
-              <SingleCategoryCard />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious className=" ms-20 bg-primary-300 text-white hover:bg-primary-350 hover:text-white" />
-        <CarouselNext className=" me-20 bg-primary-300 text-white hover:bg-primary-350 hover:text-white" />
-      </Carousel>
-    </div>
+    <>
+      {categories && (
+        <div>
+          <p className=" text-xl font-semibold  tracking-wider uppercase  text-teal-500">
+            {" "}
+            {title1} {""}
+            <span className=" text-neutral-700">{title2}</span>{" "}
+          </p>
+          <div className=" flex mb-4 mt-1">
+            <Separator />
+          </div>
+          <Carousel
+            opts={{ align: "start", loop: false }}
+            className="w-full">
+            <CarouselContent className="">
+              {categories?.map((category: any, index: any) => (
+                <CarouselItem
+                  key={index}
+                  className="md:basis-1/2 lg:basis-1/4 hover:-translate-y-1 duration-300">
+                  <SingleCategoryCard category={category} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className=" ms-20 bg-primary-300 text-white hover:bg-primary-350 hover:text-white" />
+            <CarouselNext className=" me-20 bg-primary-300 text-white hover:bg-primary-350 hover:text-white" />
+          </Carousel>
+        </div>
+      )}
+    </>
   );
 }
 
-function SingleCategoryCard() {
+function SingleCategoryCard({ category }: any) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="border   border-primary-100 rounded-xl p-2 text-neutral-700 space-y-1 cursor-pointer  ">
-      <Image
-        src={isHovered ? shirt2 : shirt1}
-        alt="img"
-        className="productImage rounded-xl   object-cover "
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      />
-      <p className=" bg-primary-100 p-1 text-neutral-700 rounded-sm text-center  font-medium tracking-wider  text-lg">Clothing</p>
-    </div>
+    <>
+      {category && (
+        <div className="border   border-primary-100 rounded-xl p-2 text-neutral-700 space-y-1 cursor-pointer  ">
+          <Link href={`/shop?category=${category._id}`}>
+            <Image
+              src={isHovered ? category.image : category.image}
+              alt="img"
+              width={300}
+              height={400}
+              className="productImage rounded-xl h-72 "
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            />
+            <p className=" bg-primary-500 p-1 text-primary-200 rounded-sm text-center  tracking-wider  text-lg">{category.name}</p>
+          </Link>
+        </div>
+      )}
+    </>
   );
 }

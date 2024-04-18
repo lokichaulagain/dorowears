@@ -19,7 +19,7 @@ export default function OurServices() {
             alt="img"
             className="mx-auto mb-2"
           />
-          <p className={`text-base tracking-wide  font-semibold text-primary-300 text-center rounded-sm  ${item.className}`}>{item.name}</p>
+          <p className={`text-base tracking-wide  font-semibold text-primary-400/90 text-center rounded-sm  ${item.className}`}>{item.name}</p>
         </div>
       ))}
     </div>
@@ -29,14 +29,14 @@ export default function OurServices() {
 const services = [
   {
     image: shipping,
-    name: "Free Shipping",
+    name: "Fast Delivery ",
     className: "bg-red-100",
   },
 
   {
     image: online,
     className: "bg-blue-100",
-    name: "Online Order",
+    name: "Reward System",
   },
 
   {
@@ -48,7 +48,7 @@ const services = [
   {
     image: promotion,
     className: "bg-red-100",
-    name: "Promotions",
+    name: "Membership Offer",
   },
 
   {
@@ -60,6 +60,6 @@ const services = [
   {
     image: support,
     className: "bg-orange-100",
-    name: "24/7 Support",
+    name: "Online Support",
   },
 ];

@@ -76,7 +76,8 @@
 }
 
 .banner1 {
-  background-image: url("../public//banners//banner-1.png");
+  /* background-image: url("../public//banners//banner-1.png"); */
+  background-image: url("../public/banner1.png");
   background-position: center; 
   background-repeat: no-repeat; 
   background-size: cover; 
@@ -84,7 +85,8 @@
 
 
 .banner2 {
-  background-image: url("../public//banners//banner-2.jpg");
+  /* background-image: url("../public//banners//banner-2.jpg"); */
+  background-image: url("../public/banner2.png");
   background-position: center; 
   background-repeat: no-repeat; 
   background-size: cover; 
@@ -92,16 +94,17 @@
 
 .small-banner-1 {
   background-image: url("../public//banners//small-banner-1.jpg");
-  background-position: center; 
+  background-position: right; 
   background-repeat: no-repeat; 
-  background-size: cover; 
+  background-size: contain; 
 }
 
 .small-banner-2 {
   background-image: url("../public//banners//small-banner-2.jpg");
-  background-position: center; 
+  background-position: left; 
   background-repeat: no-repeat; 
-  background-size: cover; 
+  background-size: contain; 
+
 }
 
 
@@ -124,3 +127,34 @@
   all: unset;
 }
 
+
+
+
+/* underline hover effect */
+.underline_hover_effect {
+  position: relative;
+  border: none;
+  background: none;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+}
+
+.underline_hover_effect:focus:after,
+.underline_hover_effect:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.underline_hover_effect:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #171717;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
