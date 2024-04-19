@@ -98,38 +98,46 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div>
-          <Link
-            href="tel:970-3976578">
+        <div className=" hidden md:block">
+          <Link href="tel:970-3976578">
             <Button className=" bg-green-500 text-white hover:bg-green-600">Whatsapp Now</Button>
           </Link>
         </div>
-        {/* <div className=" flex items-center gap-2 ">
-          <MenuIcon
-            onClick={toggleDrawer}
-            size={26}
-            className=" cursor-pointer block md:hidden "
-          />
 
-          <Drawer
-            open={isOpen}
-            onClose={toggleDrawer}
-            direction="right"
-            className="  bg-secondary-500 z-30 ">
-            <div className=" bg-secondary-500 space-y-4 p-4 border-none flex flex-col h-screen">
-              {navlinks.map((item: any, idx) => {
-                return (
-                  <Link
-                    href={item.href}
-                    key={idx}
-                    className={`${pathname === item.href ? "text-primary-500 underline_hover_effect" : ""} text-accent-400 cursor-pointer hover:text-primary-500 transition-all ease-in-out  underline_hover_effect`}>
-                    {item.name}
+        <div className=" block md:hidden">
+          <div className=" flex items-center gap-2 ">
+            <MenuIcon
+              onClick={toggleDrawer}
+              size={26}
+              className=" cursor-pointer block md:hidden "
+            />
+
+            <Drawer
+              open={isOpen}
+              onClose={toggleDrawer}
+              direction="right"
+              className="  bg-secondary-500 z-30 ">
+              <div className=" bg-secondary-500 space-y-4 p-4 border-none flex flex-col h-screen">
+                {navlinks.map((item: any, idx) => {
+                  return (
+                    <Link
+                      href={item.href}
+                      key={idx}
+                      className={`${pathname === item.href ? "text-primary-500 underline_hover_effect" : ""} text-accent-400 cursor-pointer hover:text-primary-500 transition-all ease-in-out  underline_hover_effect`}>
+                      {item.name}
+                    </Link>
+                  );
+                })}
+
+                <div className=" ">
+                  <Link href="tel:970-3976578">
+                    <Button className=" bg-green-500 text-white hover:bg-green-600">Whatsapp Now</Button>
                   </Link>
-                );
-              })}
-            </div>
-          </Drawer>
-        </div> */}
+                </div>
+              </div>
+            </Drawer>
+          </div>
+        </div>
       </div>
     </div>
   );
