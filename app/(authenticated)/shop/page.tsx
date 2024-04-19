@@ -9,6 +9,9 @@ import React, { useEffect, useState } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { AxiosInstance } from "@/app/(repositories)/config";
 import { Suspense } from "react";
+import CarouselItemCarousel from "@/components/website/category-item-carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Image from "next/image";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -63,7 +66,7 @@ export default function Page() {
       }
     };
     fetch();
-  }, [currentCategory]);
+  }, [currentCategory, search]);
 
   console.log(products);
 
@@ -85,6 +88,35 @@ export default function Page() {
                 </p>
               ))}
             </ScrollArea>
+          </div>
+
+          <div className=" block sm:hidden">
+            <Carousel>
+              <p className=" text-xl font-semibold  tracking-wider uppercase  text-teal-500">
+                Our <span className=" text-neutral-700 ">Categories</span>{" "}
+              </p>
+
+              <CarouselContent>
+                {categories?.map((category: any, index: number) => (
+                  <CarouselItem
+                    key={index}
+                    onClick={() => setCurrentCategory(category._id)}
+                    className="basis-1/3  text-primary-100 mx-2 text-sm flex items-center justify-center flex-col mt-4 mb-4">
+                    <Image
+                      src={category.image}
+                      alt="img"
+                      height={100}
+                      width={100}
+                      className=" rounded-full bg-primary-100  h-14 w-14"
+                    />
+
+                    <span className=" text-primary-500 text-xs font-medium mt-0.5">{category.name}</span>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className=" ms-10 bg-primary-300 text-white hover:bg-primary-350 hover:text-white" />
+        <CarouselNext className=" me-10 bg-primary-300 text-white hover:bg-primary-350 hover:text-white" />
+            </Carousel>
           </div>
 
           {products?.map((product: any, index: number) => (
