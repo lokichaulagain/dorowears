@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 import service from "../../../public/banners/banner-1.png";
 import Image from "next/image";
 
