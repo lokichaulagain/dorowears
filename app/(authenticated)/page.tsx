@@ -139,9 +139,9 @@ export default function Page() {
         title2={"Categories"}
       />
 
-      <div className=" flex gap-4">
-        <div className="small-banner-1  w-full p-12  tracking-wider text-primary-700 bg-primary-100">
-          <div className=" space-y-3 hidden md:block">
+      <div className=" flex-col md:flex-row gap-4 ">
+        <div className="small-banner-1  w-full p-4 md:p-12  tracking-wider text-primary-700 bg-primary-100 mb-8 md:mb-0">
+          <div className=" space-y-3 ">
             <p className=" font-semibold text-primary-300 text-sm">  We value our member </p>
             <p className=" text-xl   font-medium">
               Become a member  <br />
@@ -155,8 +155,8 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="flex items-center justify-end small-banner-2 w-full p-12 tracking-wider text-primary-100 bg-primary-500">
-          <div className="space-y-3 hidden md:block text-right">
+        <div className="flex items-center justify-end small-banner-2 w-full p-4 md:p-12 tracking-wider text-primary-100 bg-primary-500">
+          <div className="space-y-3  text-right">
             <p className="font-semibold text-sm text-primary-100">Exchange Services</p>
             <p className="text-xl font-medium">
              We also offer exchange <br />
