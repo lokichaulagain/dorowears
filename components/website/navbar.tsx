@@ -16,6 +16,7 @@ import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { HammerIcon, MenuIcon } from "lucide-react";
 import { Button } from "../ui/button";
+import { AxiosInstance } from "@/app/(repositories)/config";
 
 export default function Navbar() {
   const pathname = usePathname();
