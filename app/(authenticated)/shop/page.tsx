@@ -101,16 +101,16 @@ export default function Page() {
                   <CarouselItem
                     key={index}
                     onClick={() => setCurrentCategory(category._id)}
-                    className="basis-1/3  text-primary-100 mx-2 text-sm flex items-center justify-center flex-col mt-4 mb-4">
+                    className="basis-1/4 text-primary-100 mx-2 text-sm flex items-center justify-center flex-col mt-4 mb-4">
                     <Image
                       src={category.image}
                       alt="img"
                       height={100}
                       width={100}
-                      className=" rounded-full bg-primary-100  h-14 w-14"
+                      className=" rounded-full bg-primary-100  h-14 w-14 object-cover"
                     />
 
-                    <span className=" text-primary-500 text-xs font-medium mt-0.5">{category.name}</span>
+                    <span className=" text-primary-500 text-xs font-medium mt-0.5 text-center">{category.name}</span>
                   </CarouselItem>
                 ))}
               </CarouselContent>
