@@ -38,7 +38,6 @@ export default function Page() {
 
   console.log(product);
 
-
   const [products, setProducts] = useState<any>();
   const [isLoading1, setIsLoading1] = useState<boolean>(false);
   useEffect(() => {
@@ -80,11 +79,19 @@ export default function Page() {
                 alt="img"
               />
             </div>
+
             <SingleProductRightSection product={product} />
           </div>
           {/* <div className=" mt-12">
             <SingleProductInfoTabs  />
           </div> */}
+        </div>
+      )}
+
+      {isLoading && (
+        <div className=" grid grid-cols-1  lg:grid-cols-2 gap-8 text-neutral-700 space-y-1 cursor-pointer animate-pulse ">
+          <div className=" h-96 bg-gray-300"></div>
+          <div className=" h-96 bg-gray-300"></div>
         </div>
       )}
 
@@ -94,6 +101,33 @@ export default function Page() {
           title2={"Products"}
           products={products}
         />
+
+        {isLoading1 && (
+          <div className=" grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 ">
+            {Array.from({ length: 10 }).map((_, index) => (
+              <div
+                key={index}
+                className="border border-primary-100 rounded-xl p-2 text-neutral-700 space-y-1 cursor-pointer animate-pulse">
+                <div className=" h-72  bg-gray-300 rounded-xl"></div>
+
+                <div className="h-4 w-20 bg-gray-300 rounded mb-2"></div>
+
+                <div className="h-6 w-40 bg-gray-300 rounded mb-2"></div>
+
+                <div className="h-4 w-32 bg-gray-300 rounded mb-2"></div>
+
+                <div className=" flex items-center justify-between">
+                  <div className="h-4 w-20 bg-gray-300 rounded"></div>
+
+                  <div className="flex space-x-2">
+                    <div className="h-8 w-8 bg-gray-300 rounded-full"></div>
+                    <div className="h-8 w-8 bg-gray-300 rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </>
   );

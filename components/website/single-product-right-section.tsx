@@ -35,7 +35,7 @@ export default function SingleProductRightSection({ product }: any) {
             <Rating
               style={{ maxWidth: 100 }}
               readOnly
-              value={3}
+              value={4.7}
             />
           </div>
           <Separator />

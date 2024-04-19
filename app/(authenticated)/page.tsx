@@ -14,17 +14,24 @@ import { AxiosInstance } from "../(repositories)/config";
 
 export default function Page() {
   const [products, setProducts] = useState<any>();
+
+  const [isLoading, setisLoading] = useState<boolean>(false);
   useEffect(() => {
     const fetch = async () => {
       try {
+        setisLoading(true);
         const res = await AxiosInstance.get("/products", {
           params: {
             category: "",
           },
         });
         setProducts(res?.data?.data?.results);
+        setisLoading(false);
       } catch (error) {
         console.log(error);
+        setisLoading(false);
+      }finally{
+        setisLoading(false);
       }
     };
     fetch();
@@ -41,6 +48,12 @@ export default function Page() {
 
       <div>
         {/* <ProductTabs /> */}
+
+        <p className=" text-xl font-semibold  tracking-wider uppercase  text-pink-500">
+        {" "}
+       Explore
+        <span className=" text-neutral-700"> Our Products</span>{" "}
+      </p>
         <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-6">
           {products?.map((product: any, index: number) => (
             <SingleProductCard
@@ -48,7 +61,41 @@ export default function Page() {
               product={product}
             />
           ))}
+
+
+
+
+
+
+
         </div>
+
+        {isLoading && (
+          <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-6">
+            {Array.from({ length: 10 }).map((_, index) => (
+              <div
+                key={index}
+                className="border border-primary-100 rounded-xl p-2 text-neutral-700 space-y-1 cursor-pointer animate-pulse">
+                <div className=" h-72  bg-gray-300 rounded-xl"></div>
+
+                <div className="h-4 w-20 bg-gray-300 rounded mb-2"></div>
+
+                <div className="h-6 w-40 bg-gray-300 rounded mb-2"></div>
+
+                <div className="h-4 w-32 bg-gray-300 rounded mb-2"></div>
+
+                <div className=" flex items-center justify-between">
+                  <div className="h-4 w-20 bg-gray-300 rounded"></div>
+
+                  <div className="flex space-x-2">
+                    <div className="h-8 w-8 bg-gray-300 rounded-full"></div>
+                    <div className="h-8 w-8 bg-gray-300 rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="banner1  w-full p-12  tracking-wider text-primary-700  h-64">
