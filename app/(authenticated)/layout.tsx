@@ -6,20 +6,17 @@ import { Suspense } from "react";
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div>
-            <Suspense>
-
-      <div className=" fixed w-full bg-white shadow-sm border-b z-40  flex justify-center px-4 md:px-0">
-        <div className=" w-full md:w-9/12   ">
-          <Navbar />
+      <Suspense>
+        <div className=" fixed w-full bg-white shadow-sm border-b z-40  flex justify-center px-4 md:px-0">
+          <div className=" w-full md:w-9/12   ">
+            <Navbar />
+          </div>
         </div>
-      </div>
-      <div className="w-full md:w-9/12 mx-auto  overflow-x-hidden pt-16">
-        <div className=" px-4 md:px-0 mt-10">{children}</div>
-
-        <Footer />
-      </div>
+        <div className="w-full md:w-9/12 mx-auto  overflow-x-hidden pt-16">
+          <div className=" px-4 md:px-0 mt-10">{children}</div>
+        </div>
       </Suspense>
-
+      <Footer />
     </div>
   );
 }
