@@ -16,7 +16,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className=" px-4 md:px-0 mt-10">{children}</div>
         </div>
       </Suspense>
-      <Footer />
+    <div className=" bg-primary-500">
+    <div className="  w-full md:w-9/12  mx-auto ">
+     <Footer />
+     </div>
+    </div>
     </div>
   );
 }
