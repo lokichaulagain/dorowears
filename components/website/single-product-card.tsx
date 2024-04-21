@@ -21,8 +21,19 @@ export default function SingleProductCard({ product }: any) {
       {product && (
         <div className="border border-primary-100 rounded-xl p-2 text-neutral-700 space-y-1 cursor-pointer  ">
           <Link href={`/product/${product.productId}`}>
-          <div className=" h-72 ">
-          <Image
+            {/* <Image
+              src={isHovered ? product.image : product.image}
+              alt="img"
+              className={`productImage rounded-xl object-cover `}
+              layout="responsive"
+              width={300}
+              height={300}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            /> */}
+
+            <div className=" h-80">
+            <Image
               src={isHovered ? product.image : product.image}
               alt="img"
               className={`productImage rounded-xl object-cover `}
@@ -32,10 +43,10 @@ export default function SingleProductCard({ product }: any) {
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             />
-          </div>
+            </div>
           </Link>
 
-          <p className="text-neutral-500 text-sm tracking-wide">Clothing</p>
+          {/* <p className="text-neutral-500 text-sm tracking-wide">Clothing</p> */}
 
           <RadioGroup
             value={selectedColor}

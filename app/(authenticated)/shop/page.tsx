@@ -82,7 +82,7 @@ export default function Page() {
               {categories?.map((category: any, index: number) => (
                 <p
                   onClick={() => setCurrentCategory(category._id)}
-                  className=" mt-1 text-sm tracking-wider font-medium text-neutral-700 cursor-pointer py-1.5 px-2 hover:bg-primary-500 hover:text-primary-200 hover:translate-x-1 duration-300   "
+                  className={`${currentCategory === category._id ? "bg-primary-500 text-white " : "  text-neutral-700 cursor-pointer  hover:bg-primary-100 hover:text-primary-500 hover:translate-x-1 duration-300"} mt-1 text-sm tracking-wider font-medium py-1.5 px-2`}
                   key={index}>
                   {category.name}
                 </p>
@@ -115,7 +115,7 @@ export default function Page() {
                 ))}
               </CarouselContent>
               <CarouselPrevious className=" ms-10 bg-primary-300 text-white hover:bg-primary-350 hover:text-white" />
-        <CarouselNext className=" me-10 bg-primary-300 text-white hover:bg-primary-350 hover:text-white" />
+              <CarouselNext className=" me-10 bg-primary-300 text-white hover:bg-primary-350 hover:text-white" />
             </Carousel>
           </div>
 
