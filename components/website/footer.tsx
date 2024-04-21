@@ -16,7 +16,7 @@ export default function Footer() {
               height={200}
               width={200}
             />
-            <p className="max-w-md">Jacket House, Lalitpur, Nepal</p>
+            <p className="max-w-md">Jacket House, Lalitpur, Satdobato</p>
             <ul className="flex flex-wrap items-center gap-4 text-sm sm:text-base">
               {footerNavs.map((item, idx) => (
                 <li

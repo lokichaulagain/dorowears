@@ -58,7 +58,7 @@ export default function Location() {
 
         <div className="lg:basis-[60%] px-3 py-3 lg:px-0 lg:py-0 lg:pl-16">
           <h1 className="text-4xl font-semibold mb-2 text-white">Head Office</h1>
-          <p className="text-lg text-darkWheat">Satdobato, Chapagaun Dobato, Kathmandu, Nepal</p>
+          <p className="text-lg text-darkWheat">Jacket House, Lalitpur, Satdobato</p>
           <div className="text-lg mb-4">
             <span className="mr-2 text-white">9801020304,</span>
             <span className="text-white">01-5544403</span>
